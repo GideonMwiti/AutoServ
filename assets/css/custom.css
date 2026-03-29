@@ -1,0 +1,71 @@
+/* assets/css/custom.css */
+:root {
+    --primary-color: #1F2937;
+    --accent-color: #F59E0B;
+    --secondary-color: #374151;
+    --success-color: #10B981;
+    --danger-color: #EF4444;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: #F3F4F6;
+    color: #111827;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* Custom Utilities */
+.bg-primary-custom { background-color: var(--primary-color) !important; }
+.bg-secondary-custom { background-color: var(--secondary-color) !important; }
+.text-primary-custom { color: var(--primary-color) !important; }
+.text-secondary-custom { color: var(--secondary-color) !important; }
+.accent-color { color: var(--accent-color) !important; }
+
+/* Buttons Flat solid colors only */
+.btn {
+    border-radius: 4px;
+    box-shadow: none !important;
+    text-transform: uppercase;
+    font-weight: 600;
+    font-size: 0.85rem;
+    letter-spacing: 0.5px;
+}
+
+.custom-btn-primary {
+    background-color: var(--accent-color);
+    border: none;
+    color: white;
+}
+
+.custom-btn-primary:hover {
+    background-color: #D97706; /* slightly darker shade, no gradient */
+    color: white;
+}
+
+/* Sidebar Utilities */
+#sidebar ul li.active > a, 
+#sidebar ul li > a:hover {
+    background-color: var(--secondary-color);
+    color: var(--accent-color) !important;
+}
+.w-20px { width: 20px; text-align: center; }
+
+/* Dashboard Cards */
+.stat-card {
+    border: none;
+    border-radius: 6px;
+    background: #fff;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+.stat-icon {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 6px;
+    font-size: 1.25rem;
+}
