@@ -1,5 +1,6 @@
 <?php
 // entry point
+ob_start();
 session_start();
 require_once 'config/constants.php';
 
