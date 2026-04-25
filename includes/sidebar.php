@@ -26,11 +26,6 @@
                     <i class="fa-solid fa-users me-2 w-20px"></i> Users
                 </a>
             </li>
-            <li class="<?= $module == 'reports' ? 'active' : '' ?>">
-                <a href="?module=reports" class="text-white text-decoration-none d-block py-2 px-3 rounded mb-1">
-                    <i class="fa-solid fa-chart-pie me-2 w-20px"></i> Reports
-                </a>
-            </li>
             <li class="<?= $module == 'settings' ? 'active' : '' ?>">
                 <a href="?module=settings" class="text-white text-decoration-none d-block py-2 px-3 rounded mb-1">
                     <i class="fa-solid fa-gear me-2 w-20px"></i> Settings
