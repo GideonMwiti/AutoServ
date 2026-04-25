@@ -1,0 +1,6 @@
+logs/
+uploads/
+.env
+.vscode/
+*.log
+scratch/

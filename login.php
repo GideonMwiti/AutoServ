@@ -19,9 +19,12 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     if ($result === true) {
         header("Location: " . BASE_URL . "index.php");
         exit;
-    } else {
-        $error = $result;
     }
+}
+
+// Check for session refresh message
+if (isset($_GET['error']) && $_GET['error'] == 'session_refresh') {
+    $error = "System updated. Please log in again to continue.";
 }
 ?>
 <!DOCTYPE html>

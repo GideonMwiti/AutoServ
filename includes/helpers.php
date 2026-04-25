@@ -4,7 +4,7 @@ function e($string) {
     return htmlspecialchars($string, ENT_QUOTES, 'UTF-8');
 }
 
-function flash_message($type = 'success', $message) {
+function flash_message($type, $message) {
     $_SESSION['flash_msg'] = ['type' => $type, 'message' => $message];
     $_SESSION['flash_shown'] = false;
 }

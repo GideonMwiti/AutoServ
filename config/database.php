@@ -2,7 +2,7 @@
 $host = 'localhost';
 $db   = 'garage_db';
 $user = 'root';
-$pass = '@Learnpython.002';
+$pass = '@Sericsoft.2026';
 $charset = 'utf8mb4';
 
 $dsn = "mysql:host=$host;dbname=$db;charset=$charset";

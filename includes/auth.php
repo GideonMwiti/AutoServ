@@ -5,7 +5,7 @@ function isLoggedIn() {
 }
 
 function loginUser($pdo, $email, $password) {
-    $stmt = $pdo->prepare("SELECT id, name, role, password, status FROM users WHERE email = ?");
+    $stmt = $pdo->prepare("SELECT id, name, role, password, status, garage_id FROM users WHERE email = ?");
     $stmt->execute([$email]);
     $user = $stmt->fetch();
 
@@ -14,11 +14,22 @@ function loginUser($pdo, $email, $password) {
             return "Your account has been deactivated.";
         }
         
+        if ($user['role'] !== 'Superadmin') {
+            $gStmt = $pdo->prepare("SELECT status FROM garages WHERE id = ?");
+            $gStmt->execute([$user['garage_id']]);
+            $garageStatus = $gStmt->fetchColumn();
+            if ($garageStatus == 0) {
+                return "Your garage account has been suspended.";
+            }
+        }
+        
         session_regenerate_id(true); // Prevent session fixation
         
         $_SESSION['user_id'] = $user['id'];
         $_SESSION['user_name'] = $user['name'];
         $_SESSION['user_role'] = $user['role'];
+        $_SESSION['garage_id'] = $user['garage_id'];
+        $_SESSION['is_superadmin'] = ($user['role'] === 'Superadmin');
         $_SESSION['last_activity'] = time(); // Record activity time
         
         return true;
