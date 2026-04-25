@@ -1,5 +1,6 @@
 <?php
 // login.php
+ob_start();
 session_start();
 require_once 'config/constants.php';
 require_once 'config/database.php';
